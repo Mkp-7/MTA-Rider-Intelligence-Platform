@@ -24,8 +24,11 @@ def build_context():
 
     total = len(df)
     avg   = df["stars"].mean()
-    d_min = df["date"].min().strftime("%Y-%m-%d") if "date" in df.columns else "N/A"
-    d_max = df["date"].max().strftime("%Y-%m-%d") if "date" in df.columns else "N/A"
+    if "date" in df.columns and df["date"].notna().any():
+        d_min = df["date"].min().strftime("%Y-%m-%d")
+        d_max = df["date"].max().strftime("%Y-%m-%d")
+    else:
+        d_min = d_max = "N/A"
 
     dist = df["stars"].value_counts().sort_index()
     dist_text = ", ".join([f"{int(k)} star: {int(v)} ({v/total*100:.1f}%)" for k,v in dist.items()])
