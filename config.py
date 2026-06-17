@@ -9,7 +9,7 @@ How it works automatically:
 
 # ── Brand Settings (only thing you change) ────────────────────────────────────
 BRAND_NAME   = "Kiss Beauty Group"
-KEYWORDS     = ["Kiss nails", "Kiss lashes", "Kiss beauty", "Kiss impress"]
+KEYWORDS     = ["Kiss Beauty Group", "Kiss nails", "Kiss lashes", "Kiss beauty", "Kiss impress"]
 
 # ── App Store (leave blank if no app - auto-detects Amazon+Reddit instead) ────
 APP_STORE_ID = ""
