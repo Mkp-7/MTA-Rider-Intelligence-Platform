@@ -95,7 +95,7 @@ def show():
         "What is the overall sentiment trend?",
         "What features do users request most?",
         "Why are 1-star reviews being left?",
-        "What percentage of reviews mention shipping?",
+        "What percentage of reviews mention delays?",
         "Summarize the top 3 problems to fix.",
     ]
     cols = st.columns(4)

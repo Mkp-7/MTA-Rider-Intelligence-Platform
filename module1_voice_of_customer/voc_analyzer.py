@@ -22,7 +22,7 @@ def get_groq_client():
     return Groq(api_key=api_key)
 
 
-def cluster_themes(reviews_sample, client, industry="retail"):
+def cluster_themes(reviews_sample, client, industry="public transit"):
     numbered = "\n".join([f"[{i+1}] {r[:300]}" for i,r in enumerate(reviews_sample)])
     prompt = f"""You are analyzing customer reviews/mentions for a {industry} brand.
 

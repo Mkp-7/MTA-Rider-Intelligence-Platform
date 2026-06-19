@@ -24,9 +24,9 @@ def verdict(p, d, pilot_mean, control_mean):
     big  = abs(d) >= 0.2
     pos  = pilot_mean > control_mean
     if sig and big and pos:
-        return "SCALE IT UP", "#1D9E75", "Statistically significant and practically meaningful improvement. Recommend expanding to the next group of locations immediately."
+        return "SCALE IT UP", "#1D9E75", "Statistically significant and practically meaningful improvement. Recommend expanding the initiative immediately."
     if sig and big and not pos:
-        return "KILL THE PILOT", "#E24B4A", "Pilot is significantly underperforming control locations. Recommend halting and investigating root cause."
+        return "KILL THE PILOT", "#E24B4A", "Pilot is significantly underperforming the control group. Recommend halting and investigating root cause."
     if sig and not big:
         return "MONITOR", "#BA7517", "Statistically significant but small effect. Continue collecting data for 2-4 more weeks before deciding."
     return "TOO EARLY TO CALL", "#5F5E5A", f"Not enough data yet. Current p-value is {p:.3f} (need < 0.05). Keep running."
@@ -48,7 +48,7 @@ def sample_csv(label):
 def show():
     st.markdown("## Test & Learn Autopilot")
     st.markdown(
-        "Upload pilot and control location CSVs. "
+        "Upload pilot and control group CSVs. "
         "Get instant statistical significance and a clear verdict: **scale it, kill it, or keep watching.**"
     )
 
@@ -63,10 +63,10 @@ def show():
     st.markdown("---")
     c1, c2 = st.columns(2)
     with c1:
-        st.markdown("**Pilot Locations** - running the new initiative")
+        st.markdown("**Pilot Group** - running the new initiative")
         pilot_file = st.file_uploader("Upload pilot CSV", type=["csv"], key="pilot")
     with c2:
-        st.markdown("**Control Locations** - business as usual")
+        st.markdown("**Control Group** - business as usual")
         ctrl_file = st.file_uploader("Upload control CSV", type=["csv"], key="control")
 
     if not pilot_file or not ctrl_file:

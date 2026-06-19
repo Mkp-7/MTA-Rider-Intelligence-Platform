@@ -1,5 +1,5 @@
 """
-Retail Intelligence Platform - main entry point.
+Rider Intelligence Platform - main entry point.
 Run with: streamlit run main_app.py
 """
 
@@ -127,7 +127,7 @@ hr { border-color: #1e293b !important; }
 PAGES = {
     "home":    "🏠  Home",
     "voc":     "🗣️  Voice of Customer AI",
-    "map":     "🗺️  Store Pulse Map",
+    "map":     "📊  Service Pulse",
     "test":    "🧪  Test & Learn Autopilot",
     "copilot": "🤖  Analyst Copilot",
 }
@@ -239,9 +239,9 @@ if cur_page == "home":
 
     st.markdown(f"""
     <div class="hero-container">
-        <div class="hero-title">Customer Intelligence<br>Operating System</div>
+        <div class="hero-title">Rider Intelligence<br>Operating System</div>
         <div class="hero-sub">
-            Real customer reviews. AI-powered analysis. Instant decisions for Store Operations leaders.
+            Real rider reviews. AI-powered analysis. Instant decisions for Transit Operations leaders.
         </div>
         <div class="kpi-row">
             <div class="kpi-box">
@@ -279,16 +279,16 @@ if cur_page == "home":
 
     modules = [
         ("🗣️", "Voice of Customer AI",
-         "Groq AI reads every review, clusters themes, flags anomaly stores, and writes the exec summary. What used to take 3 days takes 30 seconds.",
+         "Groq AI reads every review, clusters themes, flags rating anomalies, and writes the exec summary. What used to take 3 days takes 30 seconds.",
          "AI POWERED", "#3b82f6", "voc"),
-        ("🗺️", "Store Pulse Map",
-         "Interactive map benchmarking every location vs its state peer group. Red stores need a Field Leader call this week.",
-         "LIVE MAP", "#10b981", "map"),
+        ("📊", "Service Pulse",
+         "Tracks rating trends across app versions and time, pinpointing exactly which release broke real-time tracking or trip planning.",
+         "TRENDS", "#10b981", "map"),
         ("🧪", "Test & Learn Autopilot",
          "Upload pilot vs control CSVs. Instant t-test, effect size, and a verdict: scale it, kill it, or keep watching.",
          "STATISTICS", "#8b5cf6", "test"),
         ("🤖", "Analyst Copilot",
-         "Plain-English chat. Ask 'Which states are trending down?' and get a real answer with numbers - no SQL needed.",
+         "Plain-English chat. Ask 'Which app version caused the most service-status complaints?' and get a real answer with numbers - no SQL needed.",
          "AI CHAT", "#f59e0b", "copilot"),
     ]
 

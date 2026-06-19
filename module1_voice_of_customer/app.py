@@ -134,7 +134,7 @@ def show():
         except ValueError as e:
             st.error(str(e)); return
         with st.spinner(f"Groq AI analyzing {n} reviews..."):
-            result = cluster_themes(sample, client, industry="retail subscription fashion")
+            result = cluster_themes(sample, client, industry="public transit / transportation")
         themes = result.get("themes", [])
         if not themes:
             st.warning("Could not extract themes. Check your GROQ_API_KEY.")
